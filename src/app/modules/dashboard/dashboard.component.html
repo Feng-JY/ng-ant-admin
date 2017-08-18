@@ -1,0 +1,53 @@
+<nz-breadcrumb class="page-breadcrumb">
+  <nz-breadcrumb-item>首页</nz-breadcrumb-item>
+  <nz-breadcrumb-item>仪表盘</nz-breadcrumb-item>
+</nz-breadcrumb>
+
+<nz-card>
+  <ng-template #body>
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+      <nz-card fxFlex="25">
+        <ng-template #body>
+          <div class="cm-card">
+            <i class="anticon anticon-cloud-o"></i>
+            <div class="title">云主机</div>
+            <div class="num">33</div>
+          </div>
+        </ng-template>
+      </nz-card>
+      <nz-card fxFlex="25">
+        <ng-template #body>
+          <div class="cm-card">
+            <i class="anticon anticon-cloud-o"></i>
+            <div class="title">云主机</div>
+            <div class="num">33</div>
+          </div>
+        </ng-template>
+      </nz-card>
+      <nz-card fxFlex="25">
+        <ng-template #body>
+          <div class="cm-card">
+            <i class="anticon anticon-cloud-o"></i>
+            <div class="title">云主机</div>
+            <div class="num">33</div>
+          </div>
+        </ng-template>
+      </nz-card>
+      <nz-card fxFlex="25">
+        <ng-template #body>
+          <div class="cm-card">
+            <i class="anticon anticon-cloud-o"></i>
+            <div class="title">云主机</div>
+            <div class="num">33</div>
+          </div>
+        </ng-template>
+      </nz-card>
+    </div>
+  </ng-template>
+</nz-card>
+
+<nz-card class="m-t-20">
+  <ng-template #body> 
+    <div echarts class="chart-body" [options]="charOption"></div>
+  </ng-template>
+</nz-card>

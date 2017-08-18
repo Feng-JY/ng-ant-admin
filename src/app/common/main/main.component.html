@@ -1,0 +1,32 @@
+<nz-layout style="min-height: 100vh;">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed">
+    <div class="logo">
+      <img src="/assets/img/zorro.svg" alt="">
+    </div>   
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed ? 'vertical': 'inline'">
+      <li nz-menu-item routerLink="/index/dashboard" routerLinkActive="my-menu-item-selected">   
+        <span>
+          <i class="anticon anticon-laptop"></i><span class="nav-text">仪表盘</span>
+        </span>   
+      </li>    
+      <li nz-submenu>
+        <span title><i class="anticon anticon-user"></i><span class="nav-text">用户</span></span>
+        <ul> 
+          <li nz-menu-item routerLink="/index/user" routerLinkActive="my-menu-item-selected">用户设置</li>
+        </ul>
+      </li> 
+    </ul> 
+  </nz-sider>
+  <nz-layout>
+    <nz-header style="background: #fff; padding:0;">
+      <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+      <nz-tooltip nzTitle="注销" nzPlacement="left">
+        <i nz-tooltip class="anticon anticon-logout" (click)="onLogout()"></i>
+      </nz-tooltip>
+    </nz-header>
+    <nz-content style="margin:0 16px;">
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer style="text-align: center;">Ant Admin © 2017</nz-footer>
+  </nz-layout>
+</nz-layout>

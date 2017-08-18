@@ -1,0 +1,37 @@
+<div class="canvas-wrapper">
+  <canvas style="width: 100vw; height: 100vh;" id="login-bg"></canvas>
+</div>
+<form class="login-form" fxLayout="column" fxLayoutAlign="space-around center" nz-form [formGroup]="form" novalidate (ngSubmit)="onSubmit()"
+  (click)="onClick($event)">
+  <div class="login">
+    <div class="logo"></div>
+    <div nz-form-item>
+      <div nz-form-control [nzValidateStatus]="form.controls.username">
+        <nz-input formControlName="username" [nzPlaceHolder]="'账号'" [nzType]="'text'" [nzSize]="'large'">
+          <ng-template #prefix>
+            <i class="anticon anticon-user"></i>
+          </ng-template>
+        </nz-input>
+        <div nz-form-explain *ngIf="form.controls.username.dirty&&form.controls.username.hasError('required')">
+          帐号不能为空
+        </div>
+      </div>
+    </div>  
+    <div nz-form-item>
+      <div nz-form-control [nzValidateStatus]="form.controls.password">
+        <nz-input formControlName="password" [nzPlaceHolder]="'密码'" [nzType]="'password'" [nzSize]="'large'">
+          <ng-template #prefix>
+            <i class="anticon anticon-lock"></i>
+          </ng-template>
+        </nz-input>
+        <div nz-form-explain *ngIf="form.controls.password.dirty&&form.controls.password.hasError('required')">
+          密码不能为空
+        </div>
+      </div>
+    </div>
+    <button nz-button [nzLoading]="submitted" [nzType]="'primary'">登  录</button>
+    <div class="copyright">
+      Ant-Admin  &copy; 2017
+    </div>
+  </div>
+</form>
